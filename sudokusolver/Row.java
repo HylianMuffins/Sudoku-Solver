@@ -9,12 +9,14 @@ package sudokusolver;
  * @since 2023-08-08
  */
 public class Row {
-    private int rowNumber;
+    private final int rowNumber;
 
     /**
      * Row constructor that creates a row instance.
+     * 
+     * @param yCoordinate Vertical position of row.
      */
     public Row(int yCoordinate) {
-        this. rowNumber = yCoordinate;
+        this.rowNumber = yCoordinate;
     }
 }
