@@ -13,15 +13,22 @@ public class Board {
     private Column[] columns = new Column[9];
     private Row[] rows = new Row[9];
     private InternalBox[][] boxes = new InternalBox[3][3];
-    
+    private Cell[][] cells = new Cell[9][9];
+
     /**
      * Board constructor that creates a board instance.
      */
     public Board() {
+        // Initialize all 81 cells
+        for (int rowNumber = 0; rowNumber < this.rows.length; rowNumber++) {
+            for (int columnNumber = 0; columnNumber < this.columns.length; columnNumber++) {
+                cells[rowNumber][columnNumber] = new Cell(rowNumber, columnNumber);
+            }
+        }
+
         // Inititalize all 9 columns
-        for (int columnNumber = 0; columnNumber < this.columns.length; 
-            columnNumber++) {
-                this.columns[columnNumber] = new Column(columnNumber);
+        for (int columnNumber = 0; columnNumber < this.columns.length; columnNumber++) {
+            this.columns[columnNumber] = new Column(columnNumber);
         }
 
         // Initialize all 9 rows
@@ -31,10 +38,8 @@ public class Board {
 
         // Initialize all 9 boxes
         for (int rowNumber = 0; rowNumber < boxes.length; rowNumber++) {
-            for (int columnNumber = 0; boxes[rowNumber].length < 3;
-                columnNumber++) {
-                    this.boxes[rowNumber][columnNumber] = 
-                        new InternalBox(rowNumber, columnNumber);
+            for (int columnNumber = 0; columnNumber < boxes[rowNumber].length; columnNumber++) {
+                this.boxes[rowNumber][columnNumber] = new InternalBox(rowNumber, columnNumber);
             }
         }
 
