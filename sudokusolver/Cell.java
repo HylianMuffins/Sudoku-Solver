@@ -24,4 +24,40 @@ public class Cell {
         this.yCoord = yCoordinate;
     }
 
+    /**
+     * Getter method that returns the x coordinate of the cell.
+     * 
+     * @return xCoord
+     */
+    public int getXCoord() {
+        return this.xCoord;
+    }
+
+    /**
+     * Getter method that returns the y coordinate of the cell.
+     * 
+     * @return yCoord
+     */
+    public int getYCoord() {
+        return this.yCoord;
+    }
+
+    /**
+     * Getter method that returns the value of the cell.
+     * 
+     * @return value
+     */
+    public int getValue() {
+        return this.value;
+    }
+
+    /**
+     * Setter method that sets the value of the cell.
+     * 
+     * @param value
+     */
+    public void setValue(int value) {
+        this.value = value;
+    }
+
 }
