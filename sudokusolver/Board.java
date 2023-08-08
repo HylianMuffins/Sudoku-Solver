@@ -12,7 +12,7 @@ package sudokusolver;
 public class Board {
     
     /**
-     * Board constructor that creates a board.
+     * Board constructor that creates a board instance.
      */
     public Board() {
     }

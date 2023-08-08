@@ -1,7 +1,7 @@
 package sudokusolver;
 
 /**
- * The Column class represents one column in a sudoku board. each column is 9
+ * The Column class represents a column in a sudoku board. each column is 9
  * cells tall and 1 cell wide.
  * 
  * @autor Zachariah Blair
@@ -12,7 +12,7 @@ public class Column {
     private final int columnNumber;
 
     /**
-     * Column constructor that creates a column.
+     * Column constructor that creates a column instance.
      */
     public Column(int xCoordinate) {
         this.columnNumber = xCoordinate;
