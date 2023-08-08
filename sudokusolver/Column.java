@@ -19,4 +19,13 @@ public class Column {
     public Column(int xCoordinate) {
         this.columnNumber = xCoordinate;
     }
+
+    /**
+     * Getter method that returns the collumn number of the column.
+     * 
+     * @return columnNumber
+     */
+    public int getColumnNumber() {
+        return this.columnNumber;
+    }
 }

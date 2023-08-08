@@ -19,4 +19,13 @@ public class Row {
     public Row(int yCoordinate) {
         this.rowNumber = yCoordinate;
     }
+
+    /**
+     * Getter method that returns the row number of the row.
+     * 
+     * @return rowNumber
+     */
+    public int getRowNumber() {
+        return this.rowNumber;
+    }
 }

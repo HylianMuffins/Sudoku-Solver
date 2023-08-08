@@ -5,7 +5,7 @@ package sudokusolver;
  * single number from 1 to 9.
  * 
  * @author Zachariah Blair
- * @version 1.0
+ * @version 1.1
  * @since 2023-08-08
  */
 public class Cell {

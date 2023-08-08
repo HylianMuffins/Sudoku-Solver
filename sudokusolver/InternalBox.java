@@ -22,4 +22,22 @@ public class InternalBox {
         this.xCoord = xCoordinate;
         this.yCoord = yCoordinate;
     }
+
+    /**
+     * Getter method that returns the x coordinate of the box.
+     * 
+     * @return xCoord
+     */
+    public int getXCoord() {
+        return this.xCoord;
+    }
+
+    /**
+     * Getter method that returns the y coordinate of the box.
+     * 
+     * @return yCoord
+     */
+    public int getYCoord() {
+        return this.yCoord;
+    }
 }
