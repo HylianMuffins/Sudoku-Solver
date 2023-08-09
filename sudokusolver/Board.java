@@ -62,4 +62,40 @@ public class Board {
         }
 
     }
+
+    /**
+     * Getter method that returns the collumns on the board.
+     * 
+     * @return columns
+     */
+    public Column[] getColumns() {
+        return this.columns;
+    }
+
+    /**
+     * Getter method that returns the rows on the board.
+     * 
+     * @return rows
+     */
+    public Row[] getRows() {
+        return this.rows;
+    }
+
+    /**
+     * Getter method that returns the internal boxes on the board.
+     * 
+     * @return boxes
+     */
+    public InternalBox[][] getBoxes() {
+        return this.boxes;
+    }
+
+    /**
+     * Getter method that returns the cells on the board.
+     * 
+     * @return cells
+     */
+    public Cell[][] getCells() {
+        return this.cells;
+    }
 }
