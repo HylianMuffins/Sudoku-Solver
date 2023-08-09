@@ -15,10 +15,12 @@ public class Column {
     /**
      * Column constructor that creates a column instance.
      * 
-     * @param xCoordinate Horizontal position of column.
+     * @param xCoordinate Horizontal position of column
+     * @param cells       Array of cells in the column
      */
-    public Column(int xCoordinate) {
+    public Column(int xCoordinate, Cell[] cells) {
         this.columnNumber = xCoordinate;
+        this.cells = cells;
     }
 
     /**

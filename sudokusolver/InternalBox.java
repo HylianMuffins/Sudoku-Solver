@@ -1,7 +1,7 @@
 package sudokusolver;
 
 /**
- * The InternalBox class represents an internal box in a sudoku board. Each box 
+ * The InternalBox class represents an internal box in a sudoku board. Each box
  * is 3 cells tall and 3 cells wide.
  * 
  * @author Zachariah Blair
@@ -16,12 +16,14 @@ public class InternalBox {
     /**
      * InternalBox constructor that creates an InternalBox instance.
      * 
-     * @param xCoordinate Horizontal position of box.
-     * @param yCoordinate Vertical position of box.
+     * @param xCoordinate Horizontal position of box
+     * @param yCoordinate Vertical position of box
+     * @param cells       2D array of cells in the box
      */
-    public InternalBox(int xCoordinate, int yCoordinate) {
+    public InternalBox(int xCoordinate, int yCoordinate, Cell[][] cells) {
         this.xCoord = xCoordinate;
         this.yCoord = yCoordinate;
+        this.cells = cells;
     }
 
     /**

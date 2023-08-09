@@ -28,18 +28,36 @@ public class Board {
 
         // Inititalize all 9 columns
         for (int columnNumber = 0; columnNumber < this.columns.length; columnNumber++) {
-            this.columns[columnNumber] = new Column(columnNumber);
+            Cell[] columnCells = new Cell[9];
+            for (int row = 0; row < 9; row++) {
+                columnCells[row] = this.cells[row][columnNumber];
+            }
+            this.columns[columnNumber] = new Column(columnNumber, columnCells);
         }
 
         // Initialize all 9 rows
         for (int rowNumber = 0; rowNumber < this.rows.length; rowNumber++) {
-            this.rows[rowNumber] = new Row(rowNumber);
+            Cell[] rowCells = this.cells[rowNumber];
+            this.rows[rowNumber] = new Row(rowNumber, rowCells);
         }
 
         // Initialize all 9 boxes
+        int value = 0;
         for (int rowNumber = 0; rowNumber < boxes.length; rowNumber++) {
             for (int columnNumber = 0; columnNumber < boxes[rowNumber].length; columnNumber++) {
-                this.boxes[rowNumber][columnNumber] = new InternalBox(rowNumber, columnNumber);
+                int rowStart = rowNumber * 3;
+                int columnStart = columnNumber * 3;
+
+                Cell[][] boxCells = new Cell[3][3];
+                for (int row = 0; row < 3; row++) {
+                    for (int column = 0; column < 3; column++){
+                        boxCells[row][column] = this.cells[row + rowStart][column + columnStart];
+                        boxCells[row][column].setValue(value);
+                        value++;
+                    }
+                }
+
+                this.boxes[rowNumber][columnNumber] = new InternalBox(rowNumber, columnNumber, boxCells);
             }
         }
 

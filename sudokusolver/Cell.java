@@ -16,8 +16,8 @@ public class Cell {
     /**
      * Cell constructor that creates a cell instance.
      * 
-     * @param xCoordinate Horizontal position of the cell.
-     * @param yCoordinate Vertical position of the cell.
+     * @param xCoordinate Horizontal position of the cell
+     * @param yCoordinate Vertical position of the cell
      */
     public Cell(int xCoordinate, int yCoordinate) {
         this.xCoord = xCoordinate;

@@ -15,10 +15,12 @@ public class Row {
     /**
      * Row constructor that creates a row instance.
      * 
-     * @param yCoordinate Vertical position of row.
+     * @param yCoordinate Vertical position of row
+     * @param cells       Array of cells in the row
      */
-    public Row(int yCoordinate) {
+    public Row(int yCoordinate, Cell[] cells) {
         this.rowNumber = yCoordinate;
+        this.cells = cells;
     }
 
     /**
