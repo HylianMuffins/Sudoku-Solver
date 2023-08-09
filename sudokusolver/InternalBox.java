@@ -11,6 +11,7 @@ package sudokusolver;
 public class InternalBox {
     private final int xCoord;
     private final int yCoord;
+    private Cell[][] cells = new Cell[3][3];
 
     /**
      * InternalBox constructor that creates an InternalBox instance.
@@ -39,5 +40,14 @@ public class InternalBox {
      */
     public int getYCoord() {
         return this.yCoord;
+    }
+
+    /**
+     * Getter method that returns the array of cells in the box.
+     * 
+     * @return cells
+     */
+    public Cell[][] getCells() {
+        return this.cells;
     }
 }

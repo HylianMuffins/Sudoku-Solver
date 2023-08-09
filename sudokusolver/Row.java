@@ -10,6 +10,7 @@ package sudokusolver;
  */
 public class Row {
     private final int rowNumber;
+    private Cell[] cells = new Cell[9];
 
     /**
      * Row constructor that creates a row instance.
@@ -27,5 +28,14 @@ public class Row {
      */
     public int getRowNumber() {
         return this.rowNumber;
+    }
+
+    /**
+     * Getter method that returns the array of cells in the row.
+     * 
+     * @return cells
+     */
+    public Cell[] getCells() {
+        return this.cells;
     }
 }

@@ -10,6 +10,7 @@ package sudokusolver;
  */
 public class Column {
     private final int columnNumber;
+    private Cell[] cells = new Cell[9];
 
     /**
      * Column constructor that creates a column instance.
@@ -28,4 +29,14 @@ public class Column {
     public int getColumnNumber() {
         return this.columnNumber;
     }
+
+    /**
+     * Getter method that returns the array of cells in the column.
+     * 
+     * @return cells
+     */
+    public Cell[] getCells() {
+        return this.cells;
+    }
+
 }
