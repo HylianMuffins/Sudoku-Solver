@@ -20,9 +20,12 @@ public class Board {
      */
     public Board() {
         // Initialize all 81 cells
+        int value = 0;
         for (int rowNumber = 0; rowNumber < this.rows.length; rowNumber++) {
             for (int columnNumber = 0; columnNumber < this.columns.length; columnNumber++) {
                 cells[rowNumber][columnNumber] = new Cell(rowNumber, columnNumber);
+                cells[rowNumber][columnNumber].setValue(value);
+                value++;
             }
         }
 
@@ -42,7 +45,6 @@ public class Board {
         }
 
         // Initialize all 9 boxes
-        int value = 0;
         for (int rowNumber = 0; rowNumber < boxes.length; rowNumber++) {
             for (int columnNumber = 0; columnNumber < boxes[rowNumber].length; columnNumber++) {
                 int rowStart = rowNumber * 3;
@@ -52,8 +54,6 @@ public class Board {
                 for (int row = 0; row < 3; row++) {
                     for (int column = 0; column < 3; column++){
                         boxCells[row][column] = this.cells[row + rowStart][column + columnStart];
-                        boxCells[row][column].setValue(value);
-                        value++;
                     }
                 }
 
