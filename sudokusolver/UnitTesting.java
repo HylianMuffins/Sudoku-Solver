@@ -17,6 +17,17 @@ public class UnitTesting {
     }
 
     @Test
-    public void testBoardConstructor() {
+    public void testBoardConstructorCells() {
+        // Create a board for testing
+        Board testBoard = new Board();
+
+        Cell[][] testCells = testBoard.getCells();
+
+        for (Cell[] row : testCells) {
+            for (Cell cell : row) {
+                int expectedValue = (cell.getXCoord() * 9) + cell.getYCoord();
+                assertEquals("Expected cell value or order was not produced", expectedValue, cell.getValue());
+            }
+        }
     };
 }
