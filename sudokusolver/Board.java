@@ -24,7 +24,7 @@ public class Board {
         for (int rowNumber = 0; rowNumber < this.rows.length; rowNumber++) {
             for (int columnNumber = 0; columnNumber < this.columns.length; columnNumber++) {
                 cells[rowNumber][columnNumber] = new Cell(rowNumber, columnNumber);
-                cells[rowNumber][columnNumber].setValue(value);
+                cells[rowNumber][columnNumber].setValue((value % 9) + 1);
                 value++;
             }
         }
@@ -97,5 +97,19 @@ public class Board {
      */
     public Cell[][] getCells() {
         return this.cells;
+    }
+
+    /**
+     * Method that displays current state of the board in the terminal.
+     */
+    public void showBoard() {
+        System.out.println("+---+---+---+---+---+---+---+---+---+");
+        for (Row row : this.rows) {
+            for (Cell cell : row.getCells()) {
+                System.out.printf("| %d ", cell.getValue());
+            }
+            System.out.print("|\n");
+            System.out.println("+---+---+---+---+---+---+---+---+---+");
+        }
     }
 }
