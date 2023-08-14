@@ -14,6 +14,8 @@ public class Board {
     private Row[] rows = new Row[9];
     private InternalBox[][] boxes = new InternalBox[3][3];
     private Cell[][] cells = new Cell[9][9];
+    public static final String RESET = "\033[0m"; // Text Reset
+    public static final String BLUE = "\u001B[34m";
 
     /**
      * Board constructor that creates a board instance.
@@ -23,7 +25,7 @@ public class Board {
         int value = 0;
         for (int rowNumber = 0; rowNumber < this.rows.length; rowNumber++) {
             for (int columnNumber = 0; columnNumber < this.columns.length; columnNumber++) {
-                cells[rowNumber][columnNumber] = new Cell(rowNumber, columnNumber);
+                cells[rowNumber][columnNumber] = new Cell(columnNumber, rowNumber);
                 cells[rowNumber][columnNumber].setValue((value % 9) + 1);
                 value++;
             }
@@ -52,7 +54,7 @@ public class Board {
 
                 Cell[][] boxCells = new Cell[3][3];
                 for (int row = 0; row < 3; row++) {
-                    for (int column = 0; column < 3; column++){
+                    for (int column = 0; column < 3; column++) {
                         boxCells[row][column] = this.cells[row + rowStart][column + columnStart];
                     }
                 }
@@ -103,13 +105,26 @@ public class Board {
      * Method that displays current state of the board in the terminal.
      */
     public void showBoard() {
-        System.out.println("+---+---+---+---+---+---+---+---+---+");
+        System.out.println(BLUE + "+---+---+---+---+---+---+---+---+---+" + RESET);
         for (Row row : this.rows) {
             for (Cell cell : row.getCells()) {
-                System.out.printf("| %d ", cell.getValue());
+                if (cell.getXCoord() % 3 == 0) {
+                    System.out.printf(BLUE + "|" + RESET + " %d ", cell.getValue());
+                } else {
+                    System.out.printf("| %d ", cell.getValue());
+                }
             }
-            System.out.print("|\n");
-            System.out.println("+---+---+---+---+---+---+---+---+---+");
+            System.out.print(BLUE + "|" + RESET + "\n");
+            if ((row.getRowNumber() + 1) % 3 == 0) {
+                System.out.println(BLUE + "+---+---+---+---+---+---+---+---+---+" + RESET);
+            } else {
+                System.out
+                        .println(BLUE
+                                + "+" + RESET + "---+---+---" + BLUE + "+" + RESET + "---+---+---" + BLUE + "+" + RESET
+                                + "---+---+---" + BLUE + "+" + RESET);
+            }
         }
+        System.out.print("\n\n");
+
     }
 }
