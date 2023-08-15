@@ -22,12 +22,9 @@ public class Board {
      */
     public Board() {
         // Initialize all 81 cells
-        int value = 0;
         for (int rowNumber = 0; rowNumber < this.rows.length; rowNumber++) {
             for (int columnNumber = 0; columnNumber < this.columns.length; columnNumber++) {
                 cells[rowNumber][columnNumber] = new Cell(columnNumber, rowNumber);
-                cells[rowNumber][columnNumber].setValue((value % 9) + 1);
-                value++;
             }
         }
 
@@ -109,9 +106,9 @@ public class Board {
         for (Row row : this.rows) {
             for (Cell cell : row.getCells()) {
                 if (cell.getXCoord() % 3 == 0) {
-                    System.out.printf(BLUE + "|" + RESET + " %d ", cell.getValue());
+                    System.out.printf(BLUE + "|" + RESET + " %s ", cell.getValue());
                 } else {
-                    System.out.printf("| %d ", cell.getValue());
+                    System.out.printf("| %s ", cell.getValue());
                 }
             }
             System.out.print(BLUE + "|" + RESET + "\n");

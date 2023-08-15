@@ -11,7 +11,7 @@ package sudokusolver;
 public class InternalBox {
     private final int xCoord;
     private final int yCoord;
-    private Cell[][] cells = new Cell[3][3];
+    private Cell[][] cells;
 
     /**
      * InternalBox constructor that creates an InternalBox instance.

@@ -10,7 +10,7 @@ package sudokusolver;
  */
 public class Row {
     private final int rowNumber;
-    private Cell[] cells = new Cell[9];
+    private Cell[] cells;
 
     /**
      * Row constructor that creates a row instance.

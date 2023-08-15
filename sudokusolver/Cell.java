@@ -1,5 +1,7 @@
 package sudokusolver;
 
+import java.lang.Integer;
+
 /**
  * The Cell class represents a cell in a sudoku board. Each cell contains a
  * single number from 1 to 9.
@@ -11,7 +13,7 @@ package sudokusolver;
 public class Cell {
     private final int xCoord;
     private final int yCoord;
-    private int value;
+    private Integer value;
 
     /**
      * Cell constructor that creates a cell instance.
@@ -22,6 +24,7 @@ public class Cell {
     public Cell(int xCoordinate, int yCoordinate) {
         this.xCoord = xCoordinate;
         this.yCoord = yCoordinate;
+        this.value = Integer.valueOf(0);
     }
 
     /**
@@ -47,8 +50,13 @@ public class Cell {
      * 
      * @return value
      */
-    public int getValue() {
-        return this.value;
+    public String getValue() {
+        String returnString = " ";
+
+        if (this.value.intValue() != 0) {
+            returnString = this.value.toString();
+        }        
+        return returnString;
     }
 
     /**

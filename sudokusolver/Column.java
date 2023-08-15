@@ -10,7 +10,7 @@ package sudokusolver;
  */
 public class Column {
     private final int columnNumber;
-    private Cell[] cells = new Cell[9];
+    private Cell[] cells;
 
     /**
      * Column constructor that creates a column instance.
