@@ -99,6 +99,24 @@ public class Board {
     }
 
     /**
+     * Setter method that sets the cells on the board.
+     * 
+     * @param newCells
+     */
+    public void setCells(int[][] newCells) {
+        int xCoord = 0;
+        int yCoord = 0;
+        for (int[] row : newCells) {
+            for (int value : row) {
+                this.cells[yCoord][xCoord].setValue(value);
+                xCoord++;
+            }
+            xCoord = 0;
+            yCoord++;
+        }
+    }
+
+    /**
      * Method that displays current state of the board in the terminal.
      */
     public void showBoard() {
@@ -123,5 +141,12 @@ public class Board {
         }
         System.out.print("\n\n");
 
+    }
+
+    /**
+     * Method that solves board and fills in values of missing cells.
+     */
+    public void solve() {
+        // do this later
     }
 }
