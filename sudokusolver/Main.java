@@ -24,5 +24,9 @@ public class Main {
         };
         testBoard.setCells(testCells);
         testBoard.showBoard();
+
+        Solver testSolver = new Solver(testBoard);
+        testSolver.solve();
+        testBoard.showBoard();
     }
 }

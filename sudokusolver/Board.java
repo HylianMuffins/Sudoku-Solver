@@ -2,7 +2,7 @@ package sudokusolver;
 
 /**
  * The Board class represents a full 9x9 sudoku board with 9 collumns, 9 rows,
- * and 9 3x3 internal boxes. I will start in an unsolved state and will be
+ * and 9 3x3 internal boxes. It will start in an unsolved state and will be
  * solved following the sudoku puzzle rules.
  * 
  * @author Zachariah Blair
@@ -120,16 +120,24 @@ public class Board {
      * Method that displays current state of the board in the terminal.
      */
     public void showBoard() {
-        System.out.println(BLUE + "+---+---+---+---+---+---+---+---+---+" + RESET);
+
+        // top edge
+        System.out.println(BLUE + "\n\n+---+---+---+---+---+---+---+---+---+" + RESET);
         for (Row row : this.rows) {
             for (Cell cell : row.getCells()) {
+
+                // handles blue section outlines
                 if (cell.getXCoord() % 3 == 0) {
                     System.out.printf(BLUE + "|" + RESET + " %s ", cell.getValue());
                 } else {
                     System.out.printf("| %s ", cell.getValue());
                 }
             }
+
+            // ends line
             System.out.print(BLUE + "|" + RESET + "\n");
+
+            // more blue section outlines
             if ((row.getRowNumber() + 1) % 3 == 0) {
                 System.out.println(BLUE + "+---+---+---+---+---+---+---+---+---+" + RESET);
             } else {
@@ -141,12 +149,5 @@ public class Board {
         }
         System.out.print("\n\n");
 
-    }
-
-    /**
-     * Method that solves board and fills in values of missing cells.
-     */
-    public void solve() {
-        // do this later
     }
 }

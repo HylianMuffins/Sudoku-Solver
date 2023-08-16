@@ -1,6 +1,6 @@
 package sudokusolver;
 
-import java.lang.Integer;
+import java.util.ArrayList;
 
 /**
  * The Cell class represents a cell in a sudoku board. Each cell contains a
@@ -13,7 +13,8 @@ import java.lang.Integer;
 public class Cell {
     private final int xCoord;
     private final int yCoord;
-    private Integer value;
+    private ArrayList<Integer> options = new ArrayList<>();
+    private int value;
 
     /**
      * Cell constructor that creates a cell instance.
@@ -24,7 +25,9 @@ public class Cell {
     public Cell(int xCoordinate, int yCoordinate) {
         this.xCoord = xCoordinate;
         this.yCoord = yCoordinate;
-        this.value = Integer.valueOf(0);
+        this.value = 0;
+        for (int i = 1; i < 10; i++)
+            this.options.add(Integer.valueOf(i));
     }
 
     /**
@@ -53,10 +56,19 @@ public class Cell {
     public String getValue() {
         String returnString = " ";
 
-        if (this.value.intValue() != 0) {
-            returnString = this.value.toString();
+        if (this.value != 0) {
+            returnString = String.format("%d", this.value);
         }        
         return returnString;
+    }
+
+    /**
+     * Getter method that returns the possible values of the cell.
+     * 
+     * @return options
+     */
+    public ArrayList<Integer> getOptions() {
+        return this.options;
     }
 
     /**
@@ -66,6 +78,14 @@ public class Cell {
      */
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public void removeOption(int value) {
+        ArrayList<Integer> optionsCopy = new ArrayList<>(this.options);
+        for (Integer option : optionsCopy) {
+            if (option.intValue() == value)
+                this.options.remove(option);
+        }
     }
 
 }
